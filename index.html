@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#29382d">
+  <meta name="description" content="Discover affordable traditional attire from cultures around the world. A student-focused cultural clothing project.">
+  <title>Tradition Threads — Traditional Attire for Students</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">CELEBRATE EVERY CULTURE <span aria-hidden="true">✦</span> STUDENT-FRIENDLY FINDS</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Tradition Threads home">Tradition<span>Threads</span><small>TRADITIONAL ATTIRE FOR STUDENTS</small></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#collections">Cultures</a><a href="#shop">Shop</a><a href="#about">Our story</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="bag-button" id="openCart" aria-label="Open shopping bag">Bag <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> YOUR CULTURE. YOUR STORY.</p>
+        <h1>Wear your roots.<br><em>Share your story.</em></h1>
+        <p class="hero-description">Discover traditional outfits and accessories from cultures around the world. Find something special for cultural days, festivals, weddings, and every celebration in between.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#shop">Explore the collection <span aria-hidden="true">↗</span></a><a class="text-link" href="#about">Our purpose <span aria-hidden="true">→</span></a></div>
+        <div class="hero-note"><span class="note-icon">✳</span><span><strong>Made for student budgets</strong><br>Thoughtful choices. Meaningful traditions.</span></div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=85" alt="Traditional Indian attire in a warm editorial photograph">
+        <div class="hero-stamp"><span>ROOTED IN</span><strong>Culture</strong><span>CONNECTED BY STYLE</span></div>
+        <div class="hero-caption">Tradition, worn with pride.</div>
+      </div>
+    </section>
+
+    <div class="promise-bar">
+      <div><span>✦</span> Student-friendly options</div><div><span>✦</span> Cultural diversity</div><div><span>✦</span> Easy browsing</div><div><span>✦</span> Community first</div>
+    </div>
+
+    <section class="section collections-section" id="collections">
+      <div class="section-heading">
+        <div><p class="eyebrow">A world of traditions</p><h2>Explore by culture</h2></div>
+        <p>Every outfit carries a story.<br>Find one that speaks to you.</p>
+      </div>
+      <div class="culture-grid">
+        <button class="culture-card" data-culture="Indian">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" alt="Traditional Indian clothing">
+          <span class="culture-overlay"><small>01 / COLLECTION</small><strong>Indian</strong><i>Explore collection ↗</i></span>
+        </button>
+        <button class="culture-card" data-culture="African">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Colourful contemporary fashion">
+          <span class="culture-overlay"><small>02 / COLLECTION</small><strong>African-inspired</strong><i>Explore collection ↗</i></span>
+        </button>
+        <button class="culture-card" data-culture="Japanese">
+          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Japanese cultural architecture">
+          <span class="culture-overlay"><small>03 / COLLECTION</small><strong>Japanese</strong><i>Explore collection ↗</i></span>
+        </button>
+        <button class="culture-card culture-card-last" data-culture="All">
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80" alt="Fashion editorial">
+          <span class="culture-overlay"><small>04 / DISCOVER</small><strong>All traditions</strong><i>See everything ↗</i></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">The student edit</p><h2>Find your outfit</h2><p class="section-subtitle">A sample catalogue to help you discover your next celebration look.</p></div>
+        <div class="product-count" id="productCount">8 sample products</div>
+      </div>
+      <div class="shop-controls">
+        <label class="search-field"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search outfits, cultures..." aria-label="Search products"><kbd>SEARCH</kbd></label>
+        <label class="select-wrap"><span class="sr-only">Filter by culture</span><select id="cultureFilter"><option value="All">All cultures</option><option value="Indian">Indian</option><option value="African">African-inspired</option><option value="Japanese">Japanese</option><option value="South Asian">South Asian</option></select></label>
+        <label class="select-wrap"><span class="sr-only">Filter by occasion</span><select id="occasionFilter"><option value="All">All occasions</option><option value="Festival">Festival</option><option value="Cultural Day">Cultural day</option><option value="Wedding">Wedding</option><option value="Everyday">Everyday</option></select></label>
+        <label class="select-wrap"><span class="sr-only">Sort products</span><select id="sortFilter"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label>
+      </div>
+      <div class="active-filter-row"><span id="activeFilterText">Showing all sample products</span><button id="clearFilters" class="clear-button">Clear filters ×</button></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="sample-note">Please note: product names, images, availability, and prices are examples for the student project. Confirm supplier details before accepting real orders.</p>
+    </section>
+
+    <section class="story-section" id="about">
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1100&q=85" alt="People spending time together">
+        <div class="story-image-label"><span>OUR BELIEF</span><strong>Culture brings us closer.</strong></div>
+      </div>
+      <div class="story-content">
+        <p class="eyebrow">More than clothing</p>
+        <h2>Every culture<br>has a <em>story.</em></h2>
+        <p>Tradition Threads is a student-focused project designed to make traditional attire easier to discover and more affordable. Students often need special outfits for cultural events, school activities, festivals, and weddings.</p>
+        <p>Our goal is to help students celebrate their own heritage, learn about other cultures, and take part in community events with confidence. We plan to compare suppliers, listen to student preferences, and offer options for different budgets.</p>
+        <div class="values-list"><div><span>01</span><strong>Celebrate diversity</strong></div><div><span>02</span><strong>Keep students in mind</strong></div><div><span>03</span><strong>Learn from our community</strong></div></div>
+        <a href="#contact" class="button button-dark">Share your ideas <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <div class="section-heading"><div><p class="eyebrow">Simple by design</p><h2>How it works</h2></div><p>From browsing to finding<br>your celebration look.</p></div>
+      <div class="steps-grid"><article><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Explore</h3><p>Browse traditional attire by culture, occasion, and price.</p></article><article><span class="step-number">02</span><div class="step-icon">♡</div><h3>Choose</h3><p>Find styles that fit your event, preferences, and budget.</p></article><article><span class="step-number">03</span><div class="step-icon">✉</div><h3>Get in touch</h3><p>Use the contact section to ask questions or share what you need.</p></article></div>
+      <p class="small-print">This is a project prototype. The order and payment process must be connected before real sales begin.</p>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-copy"><p class="eyebrow">Your voice matters</p><h2>What would you<br>love to <em>see?</em></h2><p>Help us build a collection that reflects our student community. Tell us which cultures, sizes, styles, or price ranges we should consider.</p><div class="contact-detail"><span>✉</span><div><strong>Project enquiries</strong><br><small>Use the feedback form to share your ideas.</small></div></div></div>
+      <form class="feedback-form" id="feedbackForm">
+        <div class="form-title"><span>LET'S CONNECT</span><strong>Send us your thoughts</strong></div>
+        <label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Enter your name" required>
+        <label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="interest">What are you interested in?</label><select id="interest" name="interest"><option>Traditional clothing</option><option>Accessories</option><option>Affordable prices</option><option>Suggesting a culture</option><option>Supplier partnership</option><option>Other</option></select>
+        <label for="message">Your message</label><textarea id="message" name="message" rows="4" placeholder="Share your idea..." required></textarea>
+        <button class="button button-primary submit-button" type="submit">Prepare feedback <span aria-hidden="true">↗</span></button>
+        <p class="form-note">Demo form: it prepares an email draft on your device. No information is stored on this website.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="#home">Tradition<span>Threads</span><small>TRADITIONAL ATTIRE FOR STUDENTS</small></a>
+    <p>Celebrating cultures, one outfit at a time.</p>
+    <div class="footer-links"><a href="#collections">Collections</a><a href="#shop">Shop</a><a href="#about">Our story</a><a href="#contact">Contact</a></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Tradition Threads</span><span>Student project prototype · Prices shown in CAD</span></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="cart-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag <span id="drawerCount">(0)</span></h2></div><button class="icon-button" id="closeCart" aria-label="Close bag">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><div class="cart-total"><span>Estimated subtotal</span><strong id="cartTotal">$0.00</strong></div><p>Taxes, delivery, stock, and final prices have not been calculated.</p><button class="button button-primary full-width" id="orderButton">Prepare order enquiry ↗</button><button class="continue-shopping" id="continueShopping">Continue shopping</button><p class="form-note">No payment is taken. This prototype does not submit or save orders.</p></div>
+  </aside>
+</body>
+</html>
